@@ -887,7 +887,8 @@ function confirmAdd(){
   ADDED[pickedDay].push({title:currentVideo.t.replace(/\s*🔥/,''),dur:currentVideo.d});
   closeSheet();
   renderPlanner();
-  setTimeout(()=>{ show('planner'); showToast('Added to '+cap(DAYS[pickedDay].name)); },280);
+  // stay on the current (On-Demand) screen — just confirm with the toast
+  setTimeout(()=>{ showToast('Added to '+cap(DAYS[pickedDay].name)); },280);
 }
 function showToast(msg){
   const t=document.getElementById('toast');
